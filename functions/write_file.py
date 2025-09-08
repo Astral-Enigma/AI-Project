@@ -1,5 +1,8 @@
 import os
+<<<<<<< HEAD
 from google import genai
+=======
+>>>>>>> b9338f1 (1st commit)
 
 def write_file(working_directory, file_path, content):
 
@@ -23,6 +26,7 @@ def write_file(working_directory, file_path, content):
     except Exception as e:
             f"Error: {e}"
             
+<<<<<<< HEAD
     return f'Successfully wrote to "{file_path}" ({len(content)} characters written)'
 
 schema_write_file = genai.types.FunctionDeclaration(
@@ -43,3 +47,6 @@ schema_write_file = genai.types.FunctionDeclaration(
         required=["file_path", "content"],
     ),
 )
+=======
+    return f'Successfully wrote to "{file_path}" ({len(content)} characters written)'
+>>>>>>> b9338f1 (1st commit)
