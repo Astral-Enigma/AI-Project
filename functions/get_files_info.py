@@ -1,4 +1,5 @@
 import os
+from google import genai
 
 def get_files_info(working_directory, directory="."):
     working_directory = os.path.abspath(working_directory)
@@ -19,4 +20,18 @@ def get_files_info(working_directory, directory="."):
         output += f"- {file}: file_size={os.path.getsize(path)} bytes, is_dir={os.path.isdir(path)}\n"
     return output
         
-#print(get_files_info("/home/aster_ray/", "workspace"))  
+
+schema_get_files_info = genai.types.FunctionDeclaration(
+    name="get_files_info",
+    description="Lists files in the specified directory along with their sizes, constrained to the working directory.",
+    parameters=genai.types.Schema(
+        type=genai.types.Type.OBJECT,
+        properties={
+            "directory": genai.types.Schema(
+                type=genai.types.Type.STRING,
+                description="The directory to list files from, relative to the working directory. If not provided, lists files in the working directory itself.",
+            ),
+        },
+    ),
+)
+
