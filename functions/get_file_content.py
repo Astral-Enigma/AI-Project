@@ -1,9 +1,6 @@
 import os
-<<<<<<< HEAD
 from google import genai
 
-=======
->>>>>>> b9338f1 (1st commit)
 
 def get_file_content(working_directory, file_path):
     working_directory = os.path.abspath(working_directory)
@@ -26,7 +23,6 @@ def get_file_content(working_directory, file_path):
             return data
         
     except Exception as e:
-<<<<<<< HEAD
         return f"Error: {e}"         
     
 
@@ -44,6 +40,3 @@ schema_get_file_content = genai.types.FunctionDeclaration(
         required=["file_path"],
     ),
 )
-=======
-        return f"Error: {e}"         
->>>>>>> b9338f1 (1st commit)

@@ -1,9 +1,6 @@
 import os
 import subprocess
-<<<<<<< HEAD
 from google import genai
-=======
->>>>>>> 98d8511 (Run_python_AI)
 
 def run_python_file(working_directory, file_path, args=[]):
     working_directory = os.path.abspath(working_directory)
@@ -41,7 +38,6 @@ def run_python_file(working_directory, file_path, args=[]):
         return output
      
     except Exception as e:
-<<<<<<< HEAD
         return f"Error: executing Python file: {e}"
     
 
@@ -67,6 +63,3 @@ parameters= genai.types.Schema(
     required=["file_path"],
 ),
 )
-=======
-        return f"Error: executing Python file: {e}"
->>>>>>> 98d8511 (Run_python_AI)
